@@ -1,0 +1,14 @@
+
+services:
+
+  app:
+    build: .
+    develop:
+      watch:
+        - path: .
+          action: sync
+          target: .
+        - path: ./pyproject.toml
+          action: rebuild
+    ports:
+      - "8000:8000"

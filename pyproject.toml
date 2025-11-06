@@ -6,13 +6,19 @@ authors = [
     {name = "Denis Sova",email = "dsova@sfedu.ru"}
 ]
 readme = "README.md"
+
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi (>=0.121.0,<0.122.0)",
+    "uvicorn (>=0.38.0,<0.39.0)"
 ]
 
 [tool.poetry]
 packages = [{include = "pet_social", from = "src"}]
+package-mode=false
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
