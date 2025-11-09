@@ -5,10 +5,15 @@ services:
     build: .
     develop:
       watch:
-        - path: .
+        - path: ./src
           action: sync
-          target: .
+          target: /code/src
+          ignore:
+            - __pycache__/
+            - .pytest_cache/
+            - "*.pyc"
         - path: ./pyproject.toml
           action: rebuild
     ports:
       - "8000:8000"
+    command: ["uvicorn", "src.pet_social.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

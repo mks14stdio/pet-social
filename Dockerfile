@@ -21,6 +21,6 @@ ENV POETRY_HOME='/usr/local'
 ENV POETRY_VERSION=2.1.4
 
 RUN pip install poetry
-RUN poetry install --no-ansi --only=main
+RUN poetry install --no-ansi #--only=main
 
 COPY ./src /code/src
